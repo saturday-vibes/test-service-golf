@@ -1,0 +1,13 @@
+omd_service: test-service-golf
+
+omd_component:
+  name: test-service-golf
+  omd_type: microservice
+  description: Test service for service-catalog-cli experimentation
+  omd_compliance: none
+  omd_cell: sandbox
+  omd_sdm_owner_email: you@example.com
+  omd_team: Sandbox
+  omd_tier: not-applicable
+
+omd_schema_version: v1.2.0
