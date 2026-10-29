@@ -1,0 +1,23 @@
+{
+  "name": "saturday-vibes-test-service-golf",
+  "version": "0.1.0",
+  "description": "Throwaway package for proving release-please against the public npm registry",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "node --check index.js && node --check test.js",
+    "test": "node test.js",
+    "build": "node --check index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saturday-vibes/test-service-golf.git"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
