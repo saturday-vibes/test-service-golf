@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/saturday-vibes/test-service-golf/compare/v0.2.0...v0.3.0) (2026-10-29)
+
+
+### Features
+
+* add a cheer ([36693f6](https://github.com/saturday-vibes/test-service-golf/commit/36693f66cdc765e538b3d7dfc7362253c430d011))
+* add a cheer ([712dac5](https://github.com/saturday-vibes/test-service-golf/commit/712dac563694a56d7a44e7506c19b734a51f6eca))
+
 ## [0.2.0](https://github.com/saturday-vibes/test-service-golf/compare/v0.1.0...v0.2.0) (2026-10-29)
 
 
