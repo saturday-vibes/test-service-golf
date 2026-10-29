@@ -1,0 +1,57 @@
+name: pull-request-checks
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+jobs:
+  pull-request-title-check:
+    name: PR Title Check
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login != 'github-actions[bot]'
+    steps:
+      - uses: Slashgear/action-check-pr-title@76166c63ec0b25cdbe693e5e972e83ca186313fb # v6.0.0
+        with:
+          # Match conventional commits format (scope is optional and freeform).
+          regexp: '^(feat|fix|chore|docs|ci|refactor|test|perf|build|style|revert)(\(.*\))?(!)?:'
+          helpMessage: 'PR title must follow conventional commits: type(scope): description. Example: feat(CEA-12345): add new feature'
+
+  pull-request-ticket-check:
+    name: PR Ticket Check
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login != 'github-actions[bot]'
+    steps:
+      - name: Check PR body for ticket number
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if ! echo "$PR_BODY" | grep -qPi '(CEA|SEC)-[0-9]+'; then
+            echo "::error::PR description must contain a Jira ticket (e.g. CEA-12345 or SEC-12345)"
+            exit 1
+          fi
+
+  npm-version-check:
+    name: NPM Version Check
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please--')
+    steps:
+      - uses: actions/checkout@v7
+      - name: Get node version
+        id: nvm
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org
+      - name: Fail if this version is already on npm
+        run: |
+          NAME=$(jq -r .name package.json)
+          VERSION=$(jq -r .version package.json)
+          if [ -n "$(npm view "$NAME@$VERSION" version 2>/dev/null || true)" ]; then
+            echo "::error::$NAME@$VERSION is already published"
+            exit 1
+          fi
+          echo "$NAME@$VERSION is not on npm yet"
