@@ -6,4 +6,8 @@ function farewell(name = "golf") {
   return `goodbye from ${name}`;
 }
 
-module.exports = { greet, farewell };
+function cheer(name = "golf") {
+  return `nice shot, ${name}`;
+}
+
+module.exports = { greet, farewell, cheer };
