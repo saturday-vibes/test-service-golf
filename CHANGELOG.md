@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/saturday-vibes/test-service-golf/compare/v0.4.0...v0.5.0) (2026-10-30)
+
+
+### Features
+
+* **CEA-0:** BREAKING CHANGE:: new package ([e7dff5f](https://github.com/saturday-vibes/test-service-golf/commit/e7dff5fcf3cc16e26e5a67763bb8931f1860069a))
+* **CEA-0:** BREAKING CHANGE:: new package ([e7dff5f](https://github.com/saturday-vibes/test-service-golf/commit/e7dff5fcf3cc16e26e5a67763bb8931f1860069a))
+
 ## [0.4.0](https://github.com/saturday-vibes/test-service-golf/compare/v0.3.0...v0.4.0) (2026-10-30)
 
 
