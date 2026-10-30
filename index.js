@@ -15,5 +15,8 @@ function test(){
 function test2(){
   return 'test2 created'
 }
+function test3(){
+  return 'test2 created'
+}
 
 module.exports = { greet, farewell, cheer };
