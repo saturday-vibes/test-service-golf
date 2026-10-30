@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/saturday-vibes/test-service-golf/compare/v0.3.0...v0.4.0) (2026-10-30)
+
+
+### Features
+
+* **CEA-0:** test test ([9e9e091](https://github.com/saturday-vibes/test-service-golf/commit/9e9e091c33d75827432bee755dca8ab4b1ab1303))
+* **CEA-100011:** add test function ([65fc249](https://github.com/saturday-vibes/test-service-golf/commit/65fc24906a8ecea649b8d092d9ada4d9076cd230))
+
 ## [0.3.0](https://github.com/saturday-vibes/test-service-golf/compare/v0.2.0...v0.3.0) (2026-10-29)
 
 
