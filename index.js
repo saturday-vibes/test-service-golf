@@ -12,5 +12,8 @@ function cheer(name = "golf") {
 function test(){
   return 'test created'
 }
+function test2(){
+  return 'test2 created'
+}
 
 module.exports = { greet, farewell, cheer };
