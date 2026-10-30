@@ -9,5 +9,8 @@ function farewell(name = "golf") {
 function cheer(name = "golf") {
   return `nice shot, ${name}`;
 }
+function test(){
+  return 'test created'
+}
 
 module.exports = { greet, farewell, cheer };
